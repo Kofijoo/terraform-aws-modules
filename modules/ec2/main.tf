@@ -6,6 +6,7 @@ resource "aws_instance" "main" {
   vpc_security_group_ids         = var.security_group_ids
   key_name                       = var.key_name
   user_data                      = var.user_data
+  user_data_replace_on_change    = true
   associate_public_ip_address    = var.associate_public_ip_address
   iam_instance_profile           = var.iam_instance_profile
 
