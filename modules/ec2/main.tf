@@ -9,6 +9,6 @@ resource "aws_instance" "main" {
   associate_public_ip_address    = var.associate_public_ip_address
 
   tags = merge(var.tags, {
-    Name = "instance-${count.index + 1}"
+    Name = lookup(var.tags, "Name", "instance-${count.index + 1}")
   })
 }
