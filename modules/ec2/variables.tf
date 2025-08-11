@@ -43,6 +43,12 @@ variable "associate_public_ip_address" {
   default     = false
 }
 
+variable "iam_instance_profile" {
+  description = "IAM instance profile name"
+  type        = string
+  default     = null
+}
+
 variable "tags" {
   description = "Tags to apply to resources"
   type        = map(string)

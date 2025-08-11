@@ -7,6 +7,7 @@ resource "aws_instance" "main" {
   key_name                       = var.key_name
   user_data                      = var.user_data
   associate_public_ip_address    = var.associate_public_ip_address
+  iam_instance_profile           = var.iam_instance_profile
 
   tags = merge(var.tags, {
     Name = lookup(var.tags, "Name", "instance-${count.index + 1}")
