@@ -71,12 +71,10 @@ jobs:
         echo "Created and pushed tag: $new_version"
     
     - name: Create GitHub Release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      uses: softprops/action-gh-release@v1
       with:
         tag_name: ${{ steps.version-bump.outputs.new_version }}
-        release_name: Release ${{ steps.version-bump.outputs.new_version }}
+        name: Release ${{ steps.version-bump.outputs.new_version }}
         body: |
           ## Changes
           
